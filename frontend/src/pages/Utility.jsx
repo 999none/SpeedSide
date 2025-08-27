@@ -217,7 +217,7 @@ const Utility = () => {
                   key={tool.id}
                   tool={tool}
                   isSelected={selectedTools.includes(tool.id)}
-                  onClick={() => handleToolToggle(tool.id, tool.name)}
+                  onClick={() => {}}
                   className="max-w-[520px]"
                 />
               ))}
