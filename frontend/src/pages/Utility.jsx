@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
 import { useToast } from '../hooks/use-toast';
 import { toolsData } from '../data/mock';
-import ToolModal from '../components/ToolModal';
+import { Info } from 'lucide-react';
 
 const Utility = () => {
   const [selectedTools, setSelectedTools] = useState([]);
