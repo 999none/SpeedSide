@@ -1,34 +1,81 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Custom fonts */
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('https://fonts.cdnfonts.com/css/coolvetica') format('woff2'),
+       url('https://fonts.cdnfonts.com/css/coolvetica') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+body {
+  font-family: 'Coolvetica', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.App {
+  background: radial-gradient(ellipse at 15% -10%, #1B1E34 0%, #0D0F1A 50%, #0A0B13 100%);
+  min-height: 100vh;
+  color: #FFFFFF;
 }
 
-.App-link {
-    color: #61dafb;
+/* Typography */
+.dela-font {
+  font-family: 'Dela Gothic One', cursive;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.coolvetica-font {
+  font-family: 'Coolvetica', Arial, sans-serif;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(192, 38, 211, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(192, 38, 211, 0.5), 0 0 40px rgba(255, 77, 210, 0.2);
+  }
+}
+
+.float-animation {
+  animation: float 5s ease-in-out infinite;
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out;
+}
+
+.fade-up-delay-1 {
+  animation: fadeUp 0.6s ease-out 0.1s both;
+}
+
+.fade-up-delay-2 {
+  animation: fadeUp 0.6s ease-out 0.2s both;
+}
+
+.fade-up-delay-3 {
+  animation: fadeUp 0.6s ease-out 0.3s both;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2.2s ease-in-out infinite;
 }
