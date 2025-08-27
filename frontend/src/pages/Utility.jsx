@@ -138,6 +138,36 @@ const Utility = () => {
             >
               Install {tool.name}
             </Button>
+            
+            {/* Additional buttons for LiveSplit */}
+            {tool.id === 'livesplit' && (
+              <div className="flex gap-4 mt-4 justify-center">
+                <Button
+                  onClick={() => {
+                    toast({
+                      title: "Downloading Levels Splits...",
+                      description: "Split configuration for level-based runs",
+                      duration: 2000,
+                    });
+                  }}
+                  className="dela-font bg-[#C026D3] hover:bg-[#B025C2] text-white text-lg px-6 py-3 rounded-full h-auto transform hover:-translate-y-1 transition-all duration-200"
+                >
+                  Levels Splits
+                </Button>
+                <Button
+                  onClick={() => {
+                    toast({
+                      title: "Downloading Any% Splits...",
+                      description: "Split configuration for any% speedruns",
+                      duration: 2000,
+                    });
+                  }}
+                  className="dela-font bg-[#C026D3] hover:bg-[#B025C2] text-white text-lg px-6 py-3 rounded-full h-auto transform hover:-translate-y-1 transition-all duration-200"
+                >
+                  Any% Splits
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </DialogContent>
