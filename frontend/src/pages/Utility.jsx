@@ -200,7 +200,7 @@ const Utility = () => {
                   key={tool.id}
                   tool={tool}
                   isSelected={selectedTools.includes(tool.id)}
-                  onClick={() => handleToolToggle(tool.id, tool.name)}
+                  onClick={() => {}}
                 />
               ))}
             </div>
