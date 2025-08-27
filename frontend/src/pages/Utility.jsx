@@ -9,6 +9,7 @@ import { Info } from 'lucide-react';
 const Utility = () => {
   const [selectedTools, setSelectedTools] = useState([]);
   const [ownsGame, setOwnsGame] = useState(null);
+  const [openModal, setOpenModal] = useState(null);
   const { toast } = useToast();
 
   useEffect(() => {
