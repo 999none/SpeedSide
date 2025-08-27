@@ -12,12 +12,18 @@ const Header = () => {
       </Link>
       
       <nav className="flex items-center space-x-8">
-        <button className="text-white coolvetica-font hover:text-[#C026D3] transition-colors duration-200">
+        <Link 
+          to="/guide" 
+          className="text-white coolvetica-font hover:text-[#C026D3] transition-colors duration-200"
+        >
           Guide
-        </button>
-        <button className="text-white coolvetica-font hover:text-[#C026D3] transition-colors duration-200">
+        </Link>
+        <Link 
+          to="/support" 
+          className="text-white coolvetica-font hover:text-[#C026D3] transition-colors duration-200"
+        >
           Support
-        </button>
+        </Link>
       </nav>
     </header>
   );
