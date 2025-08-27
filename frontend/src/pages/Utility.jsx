@@ -57,20 +57,43 @@ const Utility = () => {
     });
   };
 
+  const handleInstallTool = (tool) => {
+    // Toggle tool selection
+    const isCurrentlySelected = selectedTools.includes(tool.id);
+    handleToolToggle(tool.id, tool.name);
+    
+    // Show install toast
+    toast({
+      title: `Installing ${tool.name}...`,
+      description: "Installation started (demo mode)",
+      duration: 3000,
+    });
+  };
+
   const ToolButton = ({ tool, isSelected, onClick, className = "" }) => (
-    <Button
-      onClick={onClick}
-      className={`
-        dela-font text-lg h-[72px] max-w-[360px] w-full rounded-full border-3 
-        transform hover:-translate-y-1 transition-all duration-200 active:translate-y-0
-        ${isSelected 
-          ? 'bg-[#C026D3] text-white border-[#C026D3] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]' 
-          : 'bg-transparent text-white border-[#5A6484] hover:border-[#C026D3] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]'
-        } ${className}
-      `}
+    <ToolModal 
+      tool={tool} 
+      isSelected={isSelected} 
+      onToggle={() => handleToolToggle(tool.id, tool.name)}
+      onInstall={handleInstallTool}
     >
-      {tool.name}
-    </Button>
+      <Button
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick();
+        }}
+        className={`
+          dela-font text-lg h-[72px] max-w-[360px] w-full rounded-full border-3 
+          transform hover:-translate-y-1 transition-all duration-200 active:translate-y-0
+          ${isSelected 
+            ? 'bg-[#C026D3] text-white border-[#C026D3] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]' 
+            : 'bg-transparent text-white border-[#5A6484] hover:border-[#C026D3] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]'
+          } ${className}
+        `}
+      >
+        {tool.name}
+      </Button>
+    </ToolModal>
   );
 
   return (
