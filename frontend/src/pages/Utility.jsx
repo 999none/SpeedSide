@@ -73,15 +73,10 @@ const Utility = () => {
   const ToolButton = ({ tool, isSelected, onClick, className = "" }) => (
     <ToolModal 
       tool={tool} 
-      isSelected={isSelected} 
-      onToggle={() => handleToolToggle(tool.id, tool.name)}
       onInstall={handleInstallTool}
     >
       <Button
-        onClick={(e) => {
-          e.stopPropagation();
-          onClick();
-        }}
+        onClick={onClick}
         className={`
           dela-font text-lg h-[72px] max-w-[360px] w-full rounded-full border-3 
           transform hover:-translate-y-1 transition-all duration-200 active:translate-y-0
