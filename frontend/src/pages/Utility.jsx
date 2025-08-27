@@ -23,16 +23,8 @@ const Utility = () => {
     }
   }, []);
 
-  const necessaryTools = [
-    { id: 'beninex', name: 'BenInEx' },
-    { id: 'miside093l', name: '100% Save' },
-    { id: 'livesplit', name: 'LiveSplit' }
-  ];
-
-  const usefulTools = [
-    { id: 'kappimod', name: 'Kappimod' },
-    { id: 'speedrunmod', name: 'SpeedrunMod' }
-  ];
+  const necessaryTools = toolsData.necessary;
+  const usefulTools = toolsData.useful;
 
   const handleToolToggle = (toolId, toolName) => {
     let newSelectedTools;
