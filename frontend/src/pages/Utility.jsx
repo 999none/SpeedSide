@@ -220,6 +220,16 @@ const Utility = () => {
             </div>
           )}
         </Card>
+
+        {/* Render Modals */}
+        {[...necessaryTools, ...usefulTools].map((tool) => (
+          <ToolModal
+            key={tool.id}
+            tool={tool}
+            isOpen={openModal === tool.id}
+            onClose={() => setOpenModal(null)}
+          />
+        ))}
       </div>
     </div>
   );
