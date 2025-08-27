@@ -55,8 +55,6 @@ const ToolModal = ({ tool, isSelected, onToggle, onInstall, children }) => {
             <Button
               onClick={() => {
                 onInstall && onInstall(tool);
-                // Close dialog automatically after action
-                document.dispatchEvent(new KeyEvent('keydown', { key: 'Escape' }));
               }}
               className="dela-font bg-white text-black hover:bg-gray-100 text-xl px-8 py-4 rounded-full h-auto transform hover:-translate-y-1 transition-all duration-200 active:translate-y-0"
             >
