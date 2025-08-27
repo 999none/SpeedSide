@@ -1,15 +1,25 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Button } from './ui/button';
-import { X } from 'lucide-react';
+import { Info } from 'lucide-react';
 
-const ToolModal = ({ tool, isSelected, onToggle, onInstall, children }) => {
+const ToolModal = ({ tool, onInstall, children }) => {
   if (!tool) return children;
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        {children}
+        <div className="relative group">
+          {children}
+          <Button
+            className="absolute top-2 right-2 w-6 h-6 p-0 bg-[#C026D3] hover:bg-[#B025C2] text-white rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200 z-10"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            <Info className="h-3 w-3" />
+          </Button>
+        </div>
       </DialogTrigger>
       <DialogContent className="bg-[#1B1E34] border-[3px] border-[#3A4464] rounded-3xl max-w-3xl w-full mx-4 p-8">
         <DialogHeader className="text-center mb-6">
@@ -53,9 +63,7 @@ const ToolModal = ({ tool, isSelected, onToggle, onInstall, children }) => {
           {/* Action Button */}
           <div className="pt-6">
             <Button
-              onClick={() => {
-                onInstall && onInstall(tool);
-              }}
+              onClick={() => onInstall && onInstall(tool)}
               className="dela-font bg-white text-black hover:bg-gray-100 text-xl px-8 py-4 rounded-full h-auto transform hover:-translate-y-1 transition-all duration-200 active:translate-y-0"
             >
               Install {tool.name}
