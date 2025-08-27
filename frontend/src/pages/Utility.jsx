@@ -75,7 +75,7 @@ const Utility = () => {
   const ToolButton = ({ tool, isSelected, onClick, className = "" }) => (
     <div className="relative">
       <Button
-        onClick={onClick}
+        onClick={() => setOpenModal(tool.id)}
         className={`
           dela-font text-lg h-[72px] max-w-[360px] w-full rounded-full border-3 
           transform hover:-translate-y-1 transition-all duration-200 active:translate-y-0
@@ -86,17 +86,6 @@ const Utility = () => {
         `}
       >
         {tool.name}
-      </Button>
-      
-      {/* Info Button */}
-      <Button
-        className="absolute top-2 right-2 w-6 h-6 p-0 bg-[#C026D3] hover:bg-[#B025C2] text-white rounded-full z-10"
-        onClick={(e) => {
-          e.stopPropagation();
-          setOpenModal(tool.id);
-        }}
-      >
-        <Info className="h-3 w-3" />
       </Button>
     </div>
   );
